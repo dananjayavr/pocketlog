@@ -62,5 +62,6 @@ func (l *Logger) Errorf(format string, args ...any) {
 // logf prints the message to the output
 // Add decorations here, if any
 func (l *Logger) logf(format string, args ...any) {
-	_, _ = fmt.Fprintf(l.output, format+"\n", args...)
+	format = "[TYPE] " + format + "\n"
+	_, _ = fmt.Fprintf(l.output, format, args...)
 }
